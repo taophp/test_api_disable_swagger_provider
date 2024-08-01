@@ -11,6 +11,7 @@ use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
+use App\Controller\ActivationController;
 use App\Controller\RegistrationController;
 use App\Repository\UserRepository;
 use App\State\UserPasswordHasher;
@@ -28,6 +29,18 @@ use Symfony\Component\Uid\Ulid;
         new Put(processor: UserPasswordHasher::class),
         new Patch(processor: UserPasswordHasher::class),
         new Delete(),
+        new Get(
+          name: "user_activate",
+          uriTemplate: "/users/activate/{token}",
+          controller: ActivationController::class . "::activate",
+          outputFormats: ["html" => ["text/html"]],
+          formats: ["html"],
+          openapiContext: [
+            "summary" => "Activate a user account",
+            "description" =>
+              "Activates a user account using the activation token",
+          ],
+        ),
         new Post(
           name: "user_register",
           uriTemplate: "/users/register",
