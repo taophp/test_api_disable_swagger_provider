@@ -43,3 +43,8 @@ services:
 
 ###> symfony/mercure-bundle ###
 ###< symfony/mercure-bundle ###
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "8025:8025"   # Port UI Web
