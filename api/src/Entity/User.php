@@ -38,6 +38,9 @@ use Symfony\Component\Uid\Ulid;
             "description" =>
               "Activates a user account using the activation token",
           ],
+          extraProperties: [
+            "_api_disable_swagger_provider" => true,
+          ]
         ),
         new Post(
           name: "user_register",

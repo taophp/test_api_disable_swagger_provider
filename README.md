@@ -1,5 +1,15 @@
 # Test the new `_api_disable_swagger_provider` flag
 
+## About this branch
+First try : just add the `_api_disable_swagger_provider` flag I think it should be. Test failed.
+
+## About branches
+Rebuild docker images and restart containers is useless after first build (see _How to reproduce_ below). So you can try to click
+the activation link just after emptying the cache :
+``` bash
+docker compose exec php bin/console c:c
+```
+
 ## Introduction
 This project is here just to discover how to use the new `_api_disable_swagger_provider` flag for [API Platform](https://api-platform.com).
 It reproduce the typical use case :
