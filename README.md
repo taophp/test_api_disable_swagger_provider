@@ -34,6 +34,12 @@ The main branch is the initial state of the application : no action was taken to
 Please, inspect branches to see what was tried (one try, one branch).
 If you want to try something yourself and share with, make you own branch, push and get in touch (by [mail](mailto:mail@stephanemourey.fr) or on [Slack](https://symfony-devs.slack.com/archives/C39FKU9AL/p1722507207623139)).
 
+Currently, there is two branches :
+- [just_flag](https://github.com/taophp/test_api_disable_swagger_provider/tree/just_flag), where I just tried to add the flag,
+- [html_format](https://github.com/taophp/test_api_disable_swagger_provider/tree/html_format), where I add some html format options wherever it makes sens to me.
+
+The most interesting to see may be [the comparaison of the main and the html_format branches](https://github.com/taophp/test_api_disable_swagger_provider/compare/html_format?expand=1#diff-a7ca47174e57c7008ac18ddf6023fbbfd8c5beb8ddb107a005405a87e291bce7).
+
 ## References
 See :
 - https://github.com/api-platform/core/issues/6384
