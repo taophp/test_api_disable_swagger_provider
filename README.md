@@ -38,6 +38,8 @@ Currently, there is two branches :
 - [just_flag](https://github.com/taophp/test_api_disable_swagger_provider/tree/just_flag), where I just tried to add the flag,
 - [html_format](https://github.com/taophp/test_api_disable_swagger_provider/tree/html_format), where I add some html format options wherever it makes sens to me.
 
+The README.md of each branch contains a complete log and the routes.
+
 The most interesting to see may be [the comparaison of the main and the html_format branches](https://github.com/taophp/test_api_disable_swagger_provider/compare/html_format?expand=1#diff-a7ca47174e57c7008ac18ddf6023fbbfd8c5beb8ddb107a005405a87e291bce7).
 
 ## References
