@@ -7,13 +7,6 @@ After [just adding the flag], I tried to set html format options anywhere it sho
 
 It does not work.
 
-## About branches
-Rebuild docker images and restart containers is useless after first build (see _How to reproduce_ below). So you can try to click
-the activation link just after emptying the cache :
-``` bash
-docker compose exec php bin/console c:c
-```
-
 Here are the routes:
 ```
 -------------------------------------- ---------- -------- ------ -----------------------------------
@@ -68,6 +61,13 @@ php-1       | 2024/08/02 10:27:52.073	INFO	http.log.access.log0	handled request	
 php-1       | 2024/08/02 10:27:52.089	INFO	http.log.access.log0	handled request	{"request": {"remote_ip": "172.19.0.1", "remote_port": "55727", "client_ip": "172.19.0.1", "proto": "HTTP/3.0", "method": "GET", "host": "localhost", "uri": "/_next/static/chunks/pages/_app.js", "headers": {"Accept": ["*/*"], "Accept-Encoding": ["gzip, deflate, br, zstd"], "Sec-Fetch-Dest": ["script"], "Sec-Fetch-Mode": ["no-cors"], "Dnt": ["1"], "Sec-Gpc": ["1"], "User-Agent": ["Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"], "Accept-Language": ["fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3"], "Alt-Used": ["localhost"], "Referer": ["https://localhost/users/activate/f5a5263b06527eddce62124a9dc267c6fcb7cfb480f6535413429111d67d77ae"], "Cookie": ["REDACTED"], "Sec-Fetch-Site": ["same-origin"]}, "tls": {"resumed": true, "version": 772, "cipher_suite": 4865, "proto": "h3", "server_name": "localhost"}}, "bytes_read": 0, "user_id": "", "duration": 0.025883476, "size": 162738, "status": 200, "resp_headers": {"Last-Modified": ["Fri, 02 Aug 2024 10:21:47 GMT"], "Etag": ["W/\"b1555-191129c2209\""], "Content-Type": ["application/javascript; charset=UTF-8"], "Cache-Control": ["no-store, must-revalidate"], "Permissions-Policy": ["browsing-topics=()"], "Link": ["</docs.jsonld>; rel=\"http://www.w3.org/ns/hydra/core#apiDocumentation\", </.well-known/mercure>; rel=\"mercure\""], "Server": ["Caddy"], "Accept-Ranges": ["bytes"], "Date": ["Fri, 02 Aug 2024 10:27:52 GMT"], "Vary": ["Accept-Encoding"], "Content-Encoding": ["gzip"]}}
 php-1       | 2024/08/02 10:27:52.195	INFO	http.log.access.log0	handled request	{"request": {"remote_ip": "172.19.0.1", "remote_port": "55727", "client_ip": "172.19.0.1", "proto": "HTTP/3.0", "method": "GET", "host": "localhost", "uri": "/_next/static/chunks/main.js", "headers": {"Sec-Gpc": ["1"], "User-Agent": ["Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"], "Alt-Used": ["localhost"], "Cookie": ["REDACTED"], "Sec-Fetch-Dest": ["script"], "Sec-Fetch-Mode": ["no-cors"], "Accept-Encoding": ["gzip, deflate, br, zstd"], "Referer": ["https://localhost/users/activate/f5a5263b06527eddce62124a9dc267c6fcb7cfb480f6535413429111d67d77ae"], "Sec-Fetch-Site": ["same-origin"], "Accept": ["*/*"], "Accept-Language": ["fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3"], "Dnt": ["1"]}, "tls": {"resumed": true, "version": 772, "cipher_suite": 4865, "proto": "h3", "server_name": "localhost"}}, "bytes_read": 0, "user_id": "", "duration": 0.132199634, "size": 1132670, "status": 200, "resp_headers": {"Server": ["Caddy"], "Cache-Control": ["no-store, must-revalidate"], "Last-Modified": ["Fri, 02 Aug 2024 09:47:14 GMT"], "Content-Encoding": ["gzip"], "Accept-Ranges": ["bytes"], "Etag": ["W/\"4e7b32-191127c7d27\""], "Permissions-Policy": ["browsing-topics=()"], "Content-Type": ["application/javascript; charset=UTF-8"], "Vary": ["Accept-Encoding"], "Date": ["Fri, 02 Aug 2024 10:27:52 GMT"], "Link": ["</docs.jsonld>; rel=\"http://www.w3.org/ns/hydra/core#apiDocumentation\", </.well-known/mercure>; rel=\"mercure\""]}}
 php-1       | 2024/08/02 10:27:52.302	INFO	http.log.access.log0	handled request	{"request": {"remote_ip": "172.19.0.1", "remote_port": "55727", "client_ip": "172.19.0.1", "proto": "HTTP/3.0", "method": "GET", "host": "localhost", "uri": "/_next/static/development/_devMiddlewareManifest.json", "headers": {"Referer": ["https://localhost/users/activate/f5a5263b06527eddce62124a9dc267c6fcb7cfb480f6535413429111d67d77ae"], "Dnt": ["1"], "Sec-Fetch-Dest": ["empty"], "User-Agent": ["Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"], "Accept": ["*/*"], "Priority": ["u=4"], "Accept-Encoding": ["gzip, deflate, br, zstd"], "Alt-Used": ["localhost"], "Cookie": ["REDACTED"], "Sec-Fetch-Mode": ["cors"], "Sec-Fetch-Site": ["same-origin"], "Accept-Language": ["fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3"], "Sec-Gpc": ["1"]}, "tls": {"resumed": true, "version": 772, "cipher_suite": 4865, "proto": "h3", "server_name": "localhost"}}, "bytes_read": 0, "user_id": "", "duration": 0.001036944, "size": 2, "status": 200, "resp_headers": {"Server": ["Caddy"], "Content-Type": ["application/json; charset=utf-8"], "Vary": ["Accept-Encoding"], "Date": ["Fri, 02 Aug 2024 10:27:52 GMT"], "Permissions-Policy": ["browsing-topics=()"], "Link": ["</docs.jsonld>; rel=\"http://www.w3.org/ns/hydra/core#apiDocumentation\", </.well-known/mercure>; rel=\"mercure\""]}}
+```
+
+## About branches
+Rebuild docker images and restart containers is useless after first build (see _How to reproduce_ below). So you can try to click
+the activation link just after emptying the cache :
+``` bash
+docker compose exec php bin/console c:c
 ```
 
 ## Introduction
