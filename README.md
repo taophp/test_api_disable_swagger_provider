@@ -1,7 +1,7 @@
 # Test the new `_api_disable_swagger_provider` flag
 
 ## About this branch
-First try : just add the `_api_disable_swagger_provider` flag [where I think it should be](https://github.com/taophp/test_api_disable_swagger_provider/blob/e6370d01d53a70445ca9d8481fb453afb38199d6/api/src/Entity/User.php#L41). Test failed.
+After [just adding the flag], I tried to set html format options anywhere it should make sense. It does not work.
 
 ## About branches
 Rebuild docker images and restart containers is useless after first build (see _How to reproduce_ below). So you can try to click

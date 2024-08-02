@@ -33,6 +33,8 @@ use Symfony\Component\Uid\Ulid;
           name: "user_activate",
           uriTemplate: "/users/activate/{token}",
           controller: ActivationController::class . "::activate",
+          outputFormats: ["html" => ["text/html"]],
+          formats: ["html" => ["text/html"]],
           openapiContext: [
             "summary" => "Activate a user account",
             "description" =>
