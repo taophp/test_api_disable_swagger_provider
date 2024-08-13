@@ -15,6 +15,7 @@ use App\Controller\ActivationController;
 use App\Controller\RegistrationController;
 use App\Repository\UserRepository;
 use App\State\UserPasswordHasher;
+use App\State\UserProvider;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Types\UlidType;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -32,12 +33,15 @@ use Symfony\Component\Uid\Ulid;
         new Get(
           name: "user_activate",
           uriTemplate: "/users/activate/{token}",
-          controller: ActivationController::class . "::activate",
+          provider: UserProvider::class,
           openapiContext: [
             "summary" => "Activate a user account",
             "description" =>
               "Activates a user account using the activation token",
           ],
+          extraProperties: [
+            "_api_disable_swagger_provider" => true,
+          ]
         ),
         new Post(
           name: "user_register",
