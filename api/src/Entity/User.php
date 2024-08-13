@@ -11,8 +11,8 @@ use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
+use App\State\UserProcessor;
 use App\Controller\ActivationController;
-use App\Controller\RegistrationController;
 use App\Repository\UserRepository;
 use App\State\UserPasswordHasher;
 use Doctrine\ORM\Mapping as ORM;
@@ -42,7 +42,7 @@ use Symfony\Component\Uid\Ulid;
         new Post(
           name: "user_register",
           uriTemplate: "/users/register",
-          controller: RegistrationController::class . "::register",
+          processor: UserProcessor::class,
           openapiContext: [
             "summary" => "Register a new user",
             "description" => "Registers a new user and sends an activation email",
